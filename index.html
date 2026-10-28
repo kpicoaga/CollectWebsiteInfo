@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brief de tu sitio web inmobiliario</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#eef2f1;--card:#fff;--ink:#12202b;--mut:#5b6b75;--line:#cfd9d8;--acc:#c8102e;--ok:#1d7a52}
+@media(prefers-color-scheme:dark){:root{--bg:#0f1a21;--card:#16252e;--ink:#e8f0ef;--mut:#9db0b8;--line:#2b404b;--acc:#ff5a73;--ok:#4cc58f}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 "Public Sans",system-ui,sans-serif}
+h1,h2{font-family:"Bricolage Grotesque",sans-serif;line-height:1.1;margin:0}
+.wrap{max-width:1040px;margin:0 auto;padding:32px 20px 80px;display:grid;grid-template-columns:200px 1fr;gap:40px}
+header{grid-column:1/-1}
+h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:800;max-width:16ch}
+header p{max-width:60ch;color:var(--mut)}
+nav{position:sticky;top:20px;align-self:start;display:flex;flex-direction:column;gap:2px;font-size:.92rem}
+nav a{color:var(--mut);text-decoration:none;padding:5px 10px;border-left:3px solid var(--line)}
+nav a:hover,nav a:focus-visible{color:var(--ink);border-color:var(--acc);outline:none}
+section{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:28px;margin-bottom:20px;scroll-margin-top:16px}
+section>p.d{color:var(--mut);margin:6px 0 20px}
+h2{font-size:1.5rem;font-weight:800}
+label,.lb{display:block;font-weight:600;font-size:.92rem;margin:16px 0 5px}
+.h{font-weight:400;color:var(--mut);font-size:.85rem;display:block}
+input[type=text],input[type=email],input[type=tel],input[type=url],input[type=number],select,textarea{width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:6px;background:transparent;color:inherit;font:inherit}
+textarea{min-height:90px;resize:vertical}
+input:focus-visible,select:focus-visible,textarea:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:0 16px}
+.chk{display:flex;flex-wrap:wrap;gap:8px 18px}
+.chk label{display:flex;gap:7px;align-items:center;font-weight:400;margin:0}
+.req::after{content:" *";color:var(--acc)}
+input[type=color]{width:56px;height:40px;border:1px solid var(--line);border-radius:6px;padding:2px;background:transparent}
+.colors{display:flex;gap:18px;flex-wrap:wrap}
+.colors div{display:flex;flex-direction:column;gap:4px;font-size:.85rem}
+.up{border:2px dashed var(--line);border-radius:8px;padding:14px}
+.up small{color:var(--mut);display:block;margin-top:6px}
+.prop{border:1px solid var(--line);border-radius:8px;padding:6px 18px 18px;margin-top:16px}
+.prop>b{display:block;margin-top:12px;font-family:"Bricolage Grotesque",sans-serif}
+button{font:inherit;cursor:pointer;border-radius:6px;padding:10px 18px;border:1px solid var(--ink);background:transparent;color:var(--ink);font-weight:600}
+button.p{background:var(--acc);border-color:var(--acc);color:#fff;font-size:1.05rem;padding:14px 28px}
+button:disabled{opacity:.55;cursor:wait}
+#st{margin-top:18px;font-weight:600}
+#bar{height:8px;background:var(--line);border-radius:4px;overflow:hidden;margin-top:10px;display:none}
+#bar i{display:block;height:100%;width:0;background:var(--ok);transition:width .25s}
+.err{color:var(--acc)}.ok{color:var(--ok)}
+@media(max-width:820px){.wrap{grid-template-columns:1fr}nav{display:none}.g2,.g3{grid-template-columns:1fr}section{padding:20px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}#bar i{transition:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <h1>Cuéntanos sobre tu negocio inmobiliario</h1>
+  <p>Con esta información armamos tu sitio web. Llena lo que puedas; los campos con * son los más importantes. Al final subes tu logo y tus fotos. Toma unos 15 minutos.</p>
+</header>
+
+<nav aria-label="Secciones">
+  <a href="#s1">Contacto</a><a href="#s2">Tu negocio</a><a href="#s3">Voz</a><a href="#s4">Marca</a>
+  <a href="#s5">Páginas</a><a href="#s6">Propiedades</a><a href="#s7">Imágenes</a><a href="#s8">Redes y datos</a><a href="#s9">Dominio</a>
+</nav>
+
+<form id="f" novalidate>
+<section id="s1"><h2>Contacto principal</h2><p class="d">La persona con quien coordinaremos el proyecto.</p>
+  <div class="g2">
+    <div><label class="req" for="nombre">Nombre completo</label><input type="text" id="nombre" name="nombre" required></div>
+    <div><label class="req" for="email">Correo</label><input type="email" id="email" name="email" required></div>
+    <div><label class="req" for="telefono">Teléfono / WhatsApp</label><input type="tel" id="telefono" name="telefono" required></div>
+    <div><label for="negocio">Nombre comercial o de la inmobiliaria</label><input type="text" id="negocio" name="negocio"></div>
+  </div>
+</section>
+
+<section id="s2"><h2>Tu negocio</h2><p class="d">Quién eres, a quién sirves y qué quieres lograr con el sitio.</p>
+  <label for="bio">Quién eres y cómo empezaste <span class="h">Tu historia en pocas líneas. Años de experiencia, estudios, certificaciones o registros.</span></label><textarea id="bio" name="bio"></textarea>
+  <div class="lb">Qué vendes o alquilas</div>
+  <div class="chk" data-name="tipos">
+    <label><input type="checkbox" value="Casas"> Casas</label><label><input type="checkbox" value="Departamentos"> Departamentos</label>
+    <label><input type="checkbox" value="Terrenos"> Terrenos</label><label><input type="checkbox" value="Locales comerciales"> Locales comerciales</label>
+    <label><input type="checkbox" value="Oficinas"> Oficinas</label><label><input type="checkbox" value="Proyectos nuevos"> Proyectos nuevos</label>
+    <label><input type="checkbox" value="Alquiler"> Alquiler</label><label><input type="checkbox" value="Casas de playa"> Casas de playa</label>
+  </div>
+  <label for="zonas">Zonas donde trabajas <span class="h">Ej.: Miraflores, San Isidro, Surco, Cusco, Arequipa, playas del sur.</span></label><input type="text" id="zonas" name="zonas">
+  <label for="clientes">A quién atiendes <span class="h">Familias, inversionistas, peruanos en el extranjero, extranjeros, empresas…</span></label><textarea id="clientes" name="clientes"></textarea>
+  <label for="difer">Qué te hace diferente de otros agentes</label><textarea id="difer" name="diferenciadores"></textarea>
+  <label for="logros">Resultados que puedes mostrar <span class="h">Propiedades vendidas, años en el mercado, clientes atendidos, premios.</span></label><textarea id="logros" name="logros"></textarea>
+  <div class="g2">
+    <div><label for="meta">Objetivo principal del sitio</label>
+      <select id="meta" name="meta"><option value="">Elige uno</option><option>Recibir consultas por WhatsApp</option><option>Captar vendedores que quieren publicar su propiedad</option><option>Mostrar el catálogo de propiedades</option><option>Posicionar mi marca personal</option><option>Otro</option></select></div>
+    <div><label for="accion">Lo primero que debe hacer un visitante <span class="h">Ej.: "Escríbeme por WhatsApp".</span></label><input type="text" id="accion" name="accion"></div>
+  </div>
+  <label for="sentir">Qué debe sentir el visitante al salir del sitio</label><input type="text" id="sentir" name="sentir">
+</section>
+
+<section id="s3"><h2>Voz y mensaje</h2><p class="d">Cómo suena tu negocio.</p>
+  <div class="lb">Personalidad</div>
+  <div class="chk" data-name="personalidad">
+    <label><input type="checkbox" value="Confiable"> Confiable</label><label><input type="checkbox" value="Cercana"> Cercana</label><label><input type="checkbox" value="Exclusiva / premium"> Exclusiva / premium</label>
+    <label><input type="checkbox" value="Profesional"> Profesional</label><label><input type="checkbox" value="Moderna"> Moderna</label><label><input type="checkbox" value="Familiar"> Familiar</label>
+  </div>
+  <div class="g2">
+    <div><label for="eslogan">Eslogan <span class="h">Si no tienes, déjalo vacío y te proponemos opciones.</span></label><input type="text" id="eslogan" name="eslogan"></div>
+    <div><label class="lb">Idiomas del sitio</label><div class="chk" data-name="idiomas"><label><input type="checkbox" value="Español"> Español</label><label><input type="checkbox" value="Inglés"> Inglés</label></div></div>
+  </div>
+  <label for="palabras">Palabras que sí quieres usar y palabras que no</label><textarea id="palabras" name="palabras"></textarea>
+</section>
+
+<section id="s4"><h2>Marca y diseño</h2><p class="d">Colores, estilo y referencias.</p>
+  <div class="lb">Colores de tu marca <span class="h">Si no tienes, marca la casilla.</span></div>
+  <div class="colors">
+    <div><input type="color" name="color1" value="#12202b" aria-label="Color principal"><span>Principal</span></div>
+    <div><input type="color" name="color2" value="#c8102e" aria-label="Color secundario"><span>Secundario</span></div>
+    <div><input type="color" name="color3" value="#f4f4f0" aria-label="Color de fondo"><span>Fondo</span></div>
+  </div>
+  <div class="chk" data-name="sin_colores" style="margin-top:10px"><label><input type="checkbox" value="Sí"> No tengo colores definidos, proponer opciones</label></div>
+  <div class="g2">
+    <div><label for="estilo">Estilo general</label><select id="estilo" name="estilo"><option value="">Elige uno</option><option>Elegante y minimalista</option><option>Cálido y cercano</option><option>Lujo y exclusivo</option><option>Moderno y atrevido</option><option>No sé, proponer</option></select></div>
+    <div><label for="logo_t">¿Tienes logo?</label><select id="logo_t" name="tiene_logo"><option>Sí</option><option>No, necesito uno</option></select></div>
+  </div>
+  <label for="refs">Sitios web que te gustan <span class="h">Pega enlaces y di qué te gusta de cada uno.</span></label><textarea id="refs" name="referencias"></textarea>
+  <label for="nogusta">Qué no te gusta o quieres evitar</label><textarea id="nogusta" name="no_gusta"></textarea>
+</section>
+
+<section id="s5"><h2>Páginas del sitio</h2><p class="d">Marca las que quieres. Puedes agregar otras.</p>
+  <div class="chk" data-name="paginas">
+    <label><input type="checkbox" value="Inicio" checked> Inicio</label><label><input type="checkbox" value="Sobre mí" checked> Sobre mí</label>
+    <label><input type="checkbox" value="Propiedades" checked> Propiedades</label><label><input type="checkbox" value="Servicios"> Servicios</label>
+    <label><input type="checkbox" value="Quiero vender mi propiedad"> Quiero vender mi propiedad</label><label><input type="checkbox" value="Guía para comprar en Perú"> Guía para comprar en Perú</label>
+    <label><input type="checkbox" value="Testimonios"> Testimonios</label><label><input type="checkbox" value="Blog"> Blog</label>
+    <label><input type="checkbox" value="Preguntas frecuentes"> Preguntas frecuentes</label><label><input type="checkbox" value="Contacto" checked> Contacto</label>
+  </div>
+  <label for="otras">Otras páginas</label><input type="text" id="otras" name="otras_paginas">
+  <label for="test">Testimonios de clientes <span class="h">Nombre, texto y, si tienes permiso, foto o ciudad.</span></label><textarea id="test" name="testimonios"></textarea>
+  <label for="faq">Preguntas que tus clientes siempre te hacen</label><textarea id="faq" name="faq"></textarea>
+  <label for="notas">Algo más que debamos escribir en alguna página</label><textarea id="notas" name="notas_contenido"></textarea>
+</section>
+
+<section id="s6"><h2>Propiedades destacadas</h2><p class="d">Agrega las que quieras mostrar al inicio (hasta 12). Cada una con sus fotos.</p>
+  <div id="props"></div>
+  <p><button type="button" id="addp">+ Agregar propiedad</button></p>
+</section>
+
+<section id="s7"><h2>Logo y fotos</h2><p class="d">Se suben al enviar el formulario. Se reducen automáticamente de tamaño.</p>
+  <div class="up"><label for="u_logo" style="margin-top:0">Logo <span class="h">PNG, JPG o SVG</span></label><input type="file" id="u_logo" data-cat="logo" accept="image/*" multiple></div>
+  <div class="up" style="margin-top:14px"><label for="u_perfil" style="margin-top:0">Tu foto profesional</label><input type="file" id="u_perfil" data-cat="perfil" accept="image/*"></div>
+  <div class="up" style="margin-top:14px"><label for="u_gen" style="margin-top:0">Otras fotos <span class="h">Tu equipo, oficina, la ciudad, proyectos entregados.</span></label><input type="file" id="u_gen" data-cat="general" accept="image/*" multiple><small>Si tus fotos son muy pesadas, comparte un enlace de Google Drive en el siguiente campo.</small></div>
+  <label for="drive">Enlace a una carpeta (Drive, Dropbox) <span class="h">Opcional.</span></label><input type="url" id="drive" name="enlace_carpeta">
+</section>
+
+<section id="s8"><h2>Datos públicos y redes</h2><p class="d">Lo que aparecerá en el sitio.</p>
+  <div class="g2">
+    <div><label for="wa">WhatsApp público</label><input type="tel" id="wa" name="whatsapp_publico"></div>
+    <div><label for="ep">Correo público</label><input type="email" id="ep" name="email_publico"></div>
+    <div><label for="dir">Dirección u oficina</label><input type="text" id="dir" name="direccion"></div>
+    <div><label for="hor">Horario de atención</label><input type="text" id="hor" name="horario"></div>
+    <div><label for="ig">Instagram</label><input type="text" id="ig" name="instagram"></div>
+    <div><label for="fb">Facebook</label><input type="text" id="fb" name="facebook"></div>
+    <div><label for="tt">TikTok</label><input type="text" id="tt" name="tiktok"></div>
+    <div><label for="li">LinkedIn / YouTube</label><input type="text" id="li" name="linkedin_youtube"></div>
+  </div>
+</section>
+
+<section id="s9"><h2>Dominio y correo</h2><p class="d">Para publicar el sitio.</p>
+  <div class="g2">
+    <div><label for="dom">¿Tienes dominio? <span class="h">Ej.: tunombre.com o tunombre.pe</span></label><input type="text" id="dom" name="dominio"></div>
+    <div><label for="prov">¿Dónde está registrado?</label><input type="text" id="prov" name="proveedor_dominio"></div>
+  </div>
+  <label for="cor">¿Tienes correo con tu dominio?</label><select id="cor" name="correo_dominio"><option>No sé</option><option>Sí</option><option>No</option></select>
+  <label for="ext">Algo más que quieras contarnos</label><textarea id="ext" name="extra"></textarea>
+  <div class="chk" style="margin-top:18px"><label><input type="checkbox" id="ok" required> Autorizo el uso de esta información y de las imágenes que envío para construir mi sitio web.</label></div>
+  <p style="margin-top:24px"><button class="p" id="send" type="submit">Enviar mi información</button></p>
+  <div id="bar"><i></i></div>
+  <div id="st" role="status" aria-live="polite"></div>
+</section>
+</form>
+</div>
+
+<template id="tp">
+  <div class="prop"><b></b>
+    <div class="g2">
+      <div><label>Título del anuncio</label><input type="text" data-k="titulo"></div>
+      <div><label>Operación</label><select data-k="operacion"><option>Venta</option><option>Alquiler</option><option>Venta o alquiler</option></select></div>
+      <div><label>Tipo</label><select data-k="tipo"><option>Casa</option><option>Departamento</option><option>Terreno</option><option>Local comercial</option><option>Oficina</option><option>Otro</option></select></div>
+      <div><label>Distrito y ciudad</label><input type="text" data-k="ubicacion"></div>
+      <div><label>Precio y moneda <span class="h">Ej.: USD 185,000</span></label><input type="text" data-k="precio"></div>
+      <div><label>Área (m²) construida / terreno</label><input type="text" data-k="area"></div>
+    </div>
+    <div class="g3">
+      <div><label>Dormitorios</label><input type="number" min="0" data-k="dormitorios"></div>
+      <div><label>Baños</label><input type="number" min="0" data-k="banos"></div>
+      <div><label>Cocheras</label><input type="number" min="0" data-k="cocheras"></div>
+    </div>
+    <label>Descripción y características</label><textarea data-k="descripcion"></textarea>
+    <label>Fotos</label><input type="file" accept="image/*" multiple data-img>
+  </div>
+</template>
+
+<script>
+/* 1) Pega aquí la URL de tu Apps Script (ver apps-script.gs) */
+const ENDPOINT = "https://script.google.com/macros/s/AKfycbypdK8sTrcepWoT4Tl-DxpdP9_eUNwYqBT3daqakUGN2KVpU0dJ65DMQNlfiE8HryWN/exec";
+const MAX_PROPS = 12, MAX_PX = 1600;
+
+const $ = s => document.querySelector(s), f = $("#f"), st = $("#st"), bar = $("#bar");
+let np = 0;
+function addProp(){
+  if(np >= MAX_PROPS) return;
+  np++;
+  const n = $("#tp").content.cloneNode(true);
+  n.querySelector("b").textContent = "Propiedad " + np;
+  $("#props").appendChild(n);
+  if(np >= MAX_PROPS) $("#addp").disabled = true;
+}
+$("#addp").onclick = addProp; addProp();
+
+function collect(){
+  const d = {};
+  new FormData(f).forEach((v,k) => { if(typeof v === "string") d[k] = v; });
+  f.querySelectorAll("[data-name]").forEach(g => {
+    d[g.dataset.name] = [...g.querySelectorAll("input:checked")].map(i => i.value);
+  });
+  d.propiedades = [...document.querySelectorAll(".prop")].map((p,i) => {
+    const o = {n: i+1};
+    p.querySelectorAll("[data-k]").forEach(e => o[e.dataset.k] = e.value);
+    return o;
+  }).filter(o => o.titulo || o.ubicacion || o.precio);
+  return d;
+}
+function imageList(){
+  const out = [];
+  f.querySelectorAll('input[type=file][data-cat]').forEach(i => [...i.files].forEach(file => out.push({file, cat:i.dataset.cat})));
+  document.querySelectorAll(".prop").forEach((p,i) => {
+    const t = p.querySelector('[data-k="titulo"]').value.trim();
+    p.querySelectorAll("[data-img]").forEach(inp => [...inp.files].forEach(file => out.push({file, cat:"propiedad-" + (i+1) + (t ? " " + t.slice(0,30) : "")})));
+  });
+  return out;
+}
+async function shrink(file){
+  if(file.type === "image/svg+xml" || !file.type.startsWith("image/")) return {mime:file.type, data: await b64(file)};
+  const bmp = await createImageBitmap(file), k = Math.min(1, MAX_PX / Math.max(bmp.width, bmp.height));
+  const c = document.createElement("canvas"); c.width = Math.round(bmp.width*k); c.height = Math.round(bmp.height*k);
+  c.getContext("2d").drawImage(bmp, 0, 0, c.width, c.height);
+  const png = file.type === "image/png", mime = png ? "image/png" : "image/jpeg";
+  const blob = await new Promise(r => c.toBlob(r, mime, .82));
+  return {mime, data: await b64(blob)};
+}
+const b64 = blob => new Promise((res,rej) => { const r = new FileReader(); r.onload = () => res(r.result.split(",")[1]); r.onerror = rej; r.readAsDataURL(blob); });
+async function post(obj){
+  const r = await fetch(ENDPOINT, {method:"POST", body:JSON.stringify(obj)});
+  const j = await r.json(); if(!j.ok) throw new Error(j.error || "Error del servidor"); return j;
+}
+function msg(t, c){ st.textContent = t; st.className = c || ""; }
+
+f.addEventListener("submit", async e => {
+  e.preventDefault();
+  for(const id of ["nombre","email","telefono"]){ const el = $("#" + id); if(!el.value.trim()){ el.focus(); return msg("Falta completar: " + el.previousElementSibling.textContent.replace(" *",""), "err"); } }
+  if(!$("#ok").checked) return msg("Marca la casilla de autorización para enviar.", "err");
+  if(ENDPOINT.startsWith("PEGA")) return msg("Falta configurar ENDPOINT en el código (ver README).", "err");
+  const btn = $("#send"); btn.disabled = true; bar.style.display = "block";
+  try{
+    msg("Enviando tu información…");
+    const {folderId} = await post({type:"form", data: collect()});
+    const imgs = imageList();
+    for(let i = 0; i < imgs.length; i++){
+      msg("Subiendo imagen " + (i+1) + " de " + imgs.length + "…");
+      bar.firstElementChild.style.width = Math.round(i / imgs.length * 100) + "%";
+      const {mime, data} = await shrink(imgs[i].file);
+      await post({type:"image", folderId, cat:imgs[i].cat, name:imgs[i].file.name, mime, data});
+    }
+    bar.firstElementChild.style.width = "100%";
+    msg("¡Listo! Recibimos tu información y tus imágenes. Te contactaremos pronto.", "ok");
+    f.reset();
+  }catch(err){
+    msg("No se pudo enviar (" + err.message + "). Revisa tu conexión e inténtalo de nuevo.", "err"); btn.disabled = false; return;
+  }
+  btn.disabled = false;
+});
+</script>
+</body>
+</html>
